@@ -7,7 +7,6 @@ import { api } from "@/convex/_generated/api";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast"
 
-  
 interface RemoveDialogProps {
     documentId: Id<"documents">
     children: React.ReactNode;
@@ -41,10 +40,13 @@ children
   e.stopPropagation();
   setIsRemoving(true)
   remove({id: documentId})
-  .then(()=> toast({
-    variant: "default",
-    title: "Document Removed"
-  }))
+  .then(()=> {
+    window.open("/")
+    toast({
+      variant: "default",
+      title: "Document Removed"
+    })
+  })
   .catch(()=>  toast({
     variant: "destructive",
     title: "Uh oh! Something went wrong.",

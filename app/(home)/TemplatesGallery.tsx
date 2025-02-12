@@ -54,7 +54,7 @@ create({title, initialContent})
         >
 <button
   disabled={isCreating}
-  onClick={() => onTemplateclick(template.label, "")}
+  onClick={() => onTemplateclick(template.label ?? '', template.initialContent ?? '')}
   style={{
     backgroundImage: `url(${template.imageUrl})`,
     backgroundSize: "cover",

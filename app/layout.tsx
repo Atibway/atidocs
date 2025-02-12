@@ -4,7 +4,7 @@ import "./globals.css";
 import {Inter} from "next/font/google"
 import { ConvexClientProvider } from "@/components/ConvexClientProvider";
 import { Toaster } from "@/components/ui/toaster";
-
+import { Toaster as ToasterSoonar } from "@/components/ui/sonner"
 import "@liveblocks/react-ui/styles.css";
 import "@liveblocks/react-tiptap/styles.css";
 import "./globals.css";
@@ -32,6 +32,7 @@ export default function RootLayout({
           <ConvexClientProvider>
         {children}
             <Toaster/> 
+            <ToasterSoonar />
           </ConvexClientProvider>
         </NuqsAdapter>
       </body>

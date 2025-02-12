@@ -116,6 +116,7 @@ body {
     }
   }
 
+
     /* Table-specific styling */
     table {
       border-collapse: collapse;
@@ -292,3 +293,9 @@ body {
     display: none;
   }
 }
+
+div[data-radix-popper-content-wrapper]{
+z-index: 50 !important;
+}
+
+

@@ -32,11 +32,17 @@ const isOrganizationMember = !!(document.organizationId && document.organization
 if (!isOwner && !isOrganizationMember) {
   return new Response("Unauthorized", { status: 401 });
 }
+const name = user.fullName ?? user.primaryEmailAddress?.toString() ?? "Anonymous"
+const nameToNumber = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+const hue = Math.abs(nameToNumber) % 360;
+const color = `hsl(${hue}, 80%, 60%)`;
+
 
 const session = liveblocks.prepareSession(user.id, {
     userInfo:{
-        name:user.fullName?? "Anonymous",
-        avatpr: user.imageUrl
+        name,
+        avatar: user.imageUrl,
+        color,
     }
 });
 
