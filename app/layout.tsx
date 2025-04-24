@@ -8,6 +8,7 @@ import { Toaster as ToasterSoonar } from "@/components/ui/sonner"
 import "@liveblocks/react-ui/styles.css";
 import "@liveblocks/react-tiptap/styles.css";
 import "./globals.css";
+import { ChartBort } from "@/components/chart-bort";
 
 const inter = Inter({
   subsets: ["latin"]
@@ -31,6 +32,7 @@ export default function RootLayout({
         <NuqsAdapter>
           <ConvexClientProvider>
         {children}
+        <ChartBort/>
             <Toaster/> 
             <ToasterSoonar />
           </ConvexClientProvider>
